@@ -8,6 +8,9 @@
 - Kotlin 2.4.10
 - Spring Boot 4.1.0
 - Gradle 9.5.0
+- MySQL + Redis Session
+
+운영 프로필은 `mysql-1-service`, `redis-1-service`를 사용하며 비밀번호는 환경변수로만 받습니다.
 
 ## 로컬 확인
 

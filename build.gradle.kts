@@ -26,10 +26,17 @@ dependencies {
     implementation("tools.jackson.module:jackson-module-kotlin")
 
     implementation("org.springframework.boot:spring-boot-starter-webmvc")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("org.springframework.boot:spring-boot-starter-data-redis")
+    implementation("org.springframework.boot:spring-boot-starter-session-data-redis")
+
+    runtimeOnly("com.mysql:mysql-connector-j")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
 
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
     testImplementation("org.springframework.boot:spring-boot-starter-webmvc-test")
+    testImplementation("org.springframework.boot:spring-boot-starter-data-jpa-test")
+    testRuntimeOnly("com.h2database:h2")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 

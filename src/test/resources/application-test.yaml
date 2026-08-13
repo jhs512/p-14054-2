@@ -1,3 +1,17 @@
+spring:
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.data.redis.autoconfigure.DataRedisAutoConfiguration
+      - org.springframework.boot.session.data.redis.autoconfigure.SessionDataRedisAutoConfiguration
+  datasource:
+    url: jdbc:h2:mem:p14054;MODE=MySQL;DB_CLOSE_DELAY=-1
+    username: sa
+    password: ""
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+
 custom:
   gen:
     dir-path: ./build/test-gen
