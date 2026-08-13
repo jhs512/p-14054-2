@@ -14,6 +14,8 @@
 
 `main`에 push하면 GitHub Actions가 테스트한 뒤 GHCR에 `sha-<commit>`과 `latest` 태그를 발행합니다.
 
+Actuator의 readiness/liveness probe와 Spring Boot graceful shutdown을 활성화합니다.
+
 ## 로컬 확인
 
 ```bash

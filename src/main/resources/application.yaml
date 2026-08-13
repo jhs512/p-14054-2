@@ -1,12 +1,15 @@
 server:
   port: 8080
   forward-headers-strategy: native
+  shutdown: graceful
 
 spring:
   application:
     name: p-14054-2
   profiles:
     default: dev
+  lifecycle:
+    timeout-per-shutdown-phase: 30s
   threads:
     virtual:
       enabled: true
@@ -21,6 +24,21 @@ spring:
         default_batch_fetch_size: 100
   session:
     timeout: 30m
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      group:
+        readiness:
+          show-components: always
+        liveness:
+          show-components: always
 custom:
   temp:
     dir-path: /tmp

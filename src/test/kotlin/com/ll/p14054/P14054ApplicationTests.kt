@@ -22,5 +22,16 @@ class P14054ApplicationTests(
             .andExpect(status().isOk)
             .andExpect(jsonPath("$.application").value("p-14054-2"))
     }
+
+    @Test
+    fun `readiness and liveness probes work`() {
+        mvc.perform(get("/actuator/health/readiness"))
+            .andExpect(status().isOk)
+            .andExpect(jsonPath("$.status").value("UP"))
+
+        mvc.perform(get("/actuator/health/liveness"))
+            .andExpect(status().isOk)
+            .andExpect(jsonPath("$.status").value("UP"))
+    }
 }
 
