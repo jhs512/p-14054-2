@@ -1,0 +1,4 @@
+custom:
+  gen:
+    dir-path: ./build/test-gen
+

@@ -1,0 +1,22 @@
+server:
+  port: 8080
+  forward-headers-strategy: native
+
+spring:
+  application:
+    name: p-14054-2
+  profiles:
+    default: dev
+  threads:
+    virtual:
+      enabled: true
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+custom:
+  temp:
+    dir-path: /tmp
+  gen:
+    dir-path: ./var/gen
+
