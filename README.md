@@ -12,6 +12,8 @@
 
 운영 프로필은 `mysql-1-service`, `redis-1-service`를 사용하며 비밀번호는 환경변수로만 받습니다.
 
+`main`에 push하면 GitHub Actions가 테스트한 뒤 GHCR에 `sha-<commit>`과 `latest` 태그를 발행합니다.
+
 ## 로컬 확인
 
 ```bash
