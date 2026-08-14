@@ -18,6 +18,8 @@ Actuator의 readiness/liveness probe와 Spring Boot graceful shutdown을 활성�
 
 최초 배포는 `kubernetes/p-14054-2.yaml`의 Secret 값을 교체한 뒤 `kubectl apply`로 수행합니다.
 
+`/` 응답의 `hostname`을 새로고침하면 요청을 처리한 파드를 확인할 수 있습니다.
+
 ## 로컬 확인
 
 ```bash

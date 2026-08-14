@@ -21,6 +21,7 @@ class P14054ApplicationTests(
         mvc.perform(get("/"))
             .andExpect(status().isOk)
             .andExpect(jsonPath("$.application").value("p-14054-2"))
+            .andExpect(jsonPath("$.hostname").isNotEmpty)
     }
 
     @Test
