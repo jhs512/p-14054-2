@@ -16,6 +16,8 @@
 
 Actuator의 readiness/liveness probe와 Spring Boot graceful shutdown을 활성화합니다.
 
+최초 배포는 `kubernetes/p-14054-2.yaml`의 Secret 값을 교체한 뒤 `kubectl apply`로 수행합니다.
+
 ## 로컬 확인
 
 ```bash
