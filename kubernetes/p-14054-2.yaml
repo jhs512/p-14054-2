@@ -83,6 +83,14 @@ spec:
               memory: 512Mi
             limits:
               memory: 1Gi
+          volumeMounts:
+            - name: generated-files
+              mountPath: /gen
+      volumes:
+        - name: generated-files
+          hostPath:
+            path: /share/p-14054-2/gen
+            type: DirectoryOrCreate
 ---
 apiVersion: v1
 kind: Service
