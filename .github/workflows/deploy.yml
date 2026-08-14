@@ -50,3 +50,18 @@ jobs:
             ${{ env.IMAGE }}:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
+  deploy:
+    if: ${{ vars.ENABLE_K8S_DEPLOY == 'true' }}
+    needs: image
+    runs-on: ubuntu-latest
+    steps:
+      - uses: azure/k8s-set-context@v4
+        with:
+          method: kubeconfig
+          kubeconfig: ${{ secrets.KUBE_CONFIG }}
+      - name: Rolling update
+        run: |
+          IMAGE_LC="$(echo '${{ env.IMAGE }}' | tr '[:upper:]' '[:lower:]')"
+          kubectl set image deployment/p-14054-2 p-14054-2="${IMAGE_LC}:${{ needs.image.outputs.tag }}"
+          kubectl rollout status deployment/p-14054-2 --timeout=5m
